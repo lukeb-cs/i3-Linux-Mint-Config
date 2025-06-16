@@ -202,7 +202,7 @@ exec --no-startup-id xinput set-prop 11 "libinput Natural Scrolling Enabled" 1
 exec --no-startup-id xset s off -dpms
 
 # Custom Lock Bind
-bindsym $mod+l exec i3-msg exit
+bindsym $mod+l exec ~/.config/i3/lock.sh
 
 # Screenshot Binds
 bindsym Print exec --no-startup-id gnome-screenshot -a
