@@ -1,0 +1,13 @@
+#!/bin/bash
+
+echo " ⏻  "
+
+if [ "$BLOCK_BUTTON" = "1" ]; then
+    CHOICE=$(echo -e "⏻ Shutdown\n Reboot\n Logout" | rofi -dmenu -p "Power Menu")
+    
+    case "$CHOICE" in
+        "⏻ Shutdown") systemctl poweroff ;;
+        " Reboot") systemctl reboot ;;
+        " Logout") i3-msg exit ;;
+    esac
+fi

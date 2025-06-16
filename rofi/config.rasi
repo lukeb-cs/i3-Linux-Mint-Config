@@ -1,0 +1,79 @@
+configuration {
+    font: "Fira Code Nerd Font 12";
+    show-icons: true;
+    icon-theme: "Papirus-Dark";
+    display-drun: "Apps";
+    display-run: "Run";
+    drun-display-format: "{name} [<span weight='light' size='small'><i>({generic})</i></span>]";
+    width: 40%;
+    lines: 8;
+    padding: 30;
+    border-radius: 12;
+    hover-select: true;
+}
+
+window {
+    background-color: #282a36;
+    border: 2px;
+    border-color: #f8f8f2;
+    border-radius: 12px;
+}
+
+inputbar {
+    children: [prompt, entry];
+    background-color: #44475a;
+    border-radius: 8px;
+    padding: 8px;
+}
+
+prompt {
+    text-color: #f8f8f2;
+    padding: 0 10px 0 0;
+}
+
+entry {
+    text-color: #f8f8f2;
+    placeholder: "Type to search...";
+}
+
+listview {
+    padding: 8px;
+    spacing: 4px;
+    dynamic: true;
+    scrollbar: false;
+}
+
+element {
+    padding: 8px;
+    border-radius: 6px;
+    text-color: #f8f8f2;
+}
+
+element selected {
+    background-color: #bd93f9;
+    text-color: #282a36;
+}
+
+element-text {
+    text-color: inherit;
+}
+
+element-icon {
+    size: 24px;
+}
+
+mode-switcher {
+    spacing: 0;
+}
+
+button {
+    padding: 8px;
+    background-color: #44475a;
+    text-color: #f8f8f2;
+    border-radius: 6px;
+}
+
+button selected {
+    background-color: #bd93f9;
+    text-color: #282a36;
+}

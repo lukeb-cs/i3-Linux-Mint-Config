@@ -1,0 +1,19 @@
+#!/bin/bash
+
+if command -v nvidia-smi &> /dev/null; then
+    GPU=$(nvidia-smi --query-gpu=utilization.gpu --format=csv,noheader,nounits 2>/dev/null)
+    if [ $? -eq 0 ]; then
+        printf "<span color='#8be9fd'> GPU:</span> %s%% " "$GPU"
+        exit 0
+    fi
+fi
+
+if [ -f "/sys/class/drm/card0/device/gpu_busy_percent" ]; then
+    GPU=$(cat /sys/class/drm/card0/device/gpu_busy_percent)
+    printf "<span color='#8be9fd'> GPU:</span> %s%% " "$GPU"
+elif command -v intel_gpu_top &> /dev/null; then
+    GPU=$(intel_gpu_top -l 1 | grep Render/3D | awk '{print $4}')
+    printf "<span color='#8be9fd'> GPU:</span> %s%% " "$GPU"
+else
+    printf "<span color='#6272a4'> GPU: N/A </span>"
+fi

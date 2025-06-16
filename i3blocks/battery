@@ -1,0 +1,18 @@
+#!/bin/bash
+
+BAT=$(cat /sys/class/power_supply/BAT0/capacity)
+STATUS=$(cat /sys/class/power_supply/BAT0/status)
+
+if [ "$STATUS" = "Charging" ]; then
+    printf "<span color='#50fa7b'> </span> %s%% " "$BAT"
+elif [ "$BAT" -lt 10 ]; then
+    printf "<span color='#ff5555'> </span> %s%% " "$BAT"
+elif [ "$BAT" -lt 20 ]; then
+    printf "<span color='#f1fa8c'> </span> %s%% " "$BAT"
+elif [ "$BAT" -lt 50 ]; then
+    printf "<span color='#50fa7b'> </span> %s%% " "$BAT"
+elif [ "$BAT" -lt 80 ]; then
+    printf "<span color='#50fa7b'> </span> %s%% " "$BAT"
+else
+    printf "<span color='#50fa7b'> </span> %s%% " "$BAT"
+fi
