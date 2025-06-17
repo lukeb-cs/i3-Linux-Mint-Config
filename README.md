@@ -7,7 +7,7 @@
 [Gtk Dracula Theme](https://www.gnome-look.org/p/1687249)  
 
 ## Prerequisites
-Run `sudo apt install i3 kitty i3blocks picom rofi feh python3 pip pulseaudio lxappearance` in terminal
+Run `sudo apt install i3 kitty i3blocks picom rofi feh python3 pip pulseaudio lxappearance i3lock` in terminal
 
 ## Setup
 1. Install Prerequisites
